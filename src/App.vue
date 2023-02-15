@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <div class="row bg-dark p-0 text-white">
       <div class="col-1"></div>
-      <div class="col-10 m-2">Karen Cardenas</div>
+      <div class="col-10 m-2">Pokemones</div>
       <div class="col-1"></div>
     </div>
     <div class="row">
