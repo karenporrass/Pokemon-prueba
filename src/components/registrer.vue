@@ -4,9 +4,10 @@
     <h1>Registrate</h1>
      <div class="contenedor ">
      
-     <div class="input-contenedor">
+        <h3 class="text-success">{{ alert }}</h3>
+        <div class="input-contenedor">
          <i class="fas fa-user icon"></i>
-         <input type="text" placeholder="Nombre Completo">
+         <input v-model="name" type="text" placeholder="Nombre Completo">
          
          </div>
          
@@ -21,17 +22,55 @@
          <input v-model="password" type="password" placeholder="Contraseña">
          
          </div>
-         <input type="button" value="Registrate" class="button" @click="registrarse()">
-         <p>¿Ya tienes una cuenta?<a class="link" href="loginvista.html">Iniciar Sesion</a></p>
+         <input type="button" value="Registrate" class="button" @click="registrar()">
+         <p>¿Ya tienes una cuenta?<a class="link" href="login.html">Iniciar Sesion</a></p>
      </div>
     </form>
 </template>
 
 
 <script>
+
+import {ref} from "vue"
 export default {
+    setup(){
+      let alert= ref("")
+      let name= ref("")
+      let email= ref("")
+      let password = ref("")
+
+      function registrar(){
+        console.log(email);
+        console.log(password);
+        if(name.value== ""){
+          alert.value = 'digite un nombre valido'  
+        }
+        else if (email.value == ""){
+          alert.value = 'digite un email valido'
+            }
+
+        else if (password.value == ""){
+            alert.value = 'digite una password'
+        }
+        else{ 
+              alert.value= 'registrado'
+            }
+           
+        } 
       
-}
+
+      return{
+        alert,
+        email,
+        password,
+        name,
+        registrar
+      }
+    }
+
+    }
+      
+
 </script>
 <style>
 body {

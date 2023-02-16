@@ -41,10 +41,13 @@
         console.log(password);
         if(email.value== ""){
           alert.value = 'digite un email valido'
+
         }
-        if (password.value == ""){
+
+         else if (password.value == ""){
           alert.value = 'digite una password'
         }
+        
 
         else{ 
               links.value ='card.html'
